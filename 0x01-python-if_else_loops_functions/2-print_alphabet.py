@@ -2,4 +2,4 @@
 string = ''
 for i in range(97, 122 + 1):
     string += chr(i)
-print(string, end="")
+print("{}".format(string), end="")
