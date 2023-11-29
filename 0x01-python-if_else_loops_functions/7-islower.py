@@ -2,7 +2,7 @@
 def islower(c):
     string = ''
     for i in range(ord('a'), ord('z') + 1):
-        string += ord(chr(i))
+        string += chr(i)
     if c in string:
         return True
     else:
