@@ -1,4 +1,4 @@
 #!/bin/bash
 python3 -m py_compile "$PYFILE" > "${PYFILE}c"
 chmod +x "${PYFILE}c"
-echo 1
+python3 -c "print(1)"
