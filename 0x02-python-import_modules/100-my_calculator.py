@@ -6,7 +6,6 @@ if __name__ == "__main__":
 
     argslen = len(sys.argv) - 1
     args = sys.argv
-    print(args[2])
     if argslen == 3:
         a = int(args[1])
         b = int(args[3])
