@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import sys
-
-
 if __name__ == "__main__":
     
+    import sys
+
     args_number = len(sys.argv) - 1
     
     if args_number == 0:
