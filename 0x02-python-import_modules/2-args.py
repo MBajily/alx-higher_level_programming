@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    
+
     import sys
 
     args_number = len(sys.argv) - 1
-    
+
     if args_number == 0:
         print("0 arguments.")
     elif args_number == 1:
