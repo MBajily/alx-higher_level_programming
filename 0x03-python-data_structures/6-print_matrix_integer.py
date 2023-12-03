@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     if matrix == [[]]:
-        print("$")
+        print()
     for row in matrix:
         i = 0
         for item in row:
             i += 1
             if i == len(row):
-                print(item, end="$")
+                print(item)
             else:
                 print(item, end=" ")
-        print()
