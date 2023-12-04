@@ -1,11 +1,11 @@
 #include "lists.h"
 
 
-void reverse_list(list_t **head)
+void reverse_list(listint_t **head)
 {
-	list_t *pr = NULL;
-	list_t *cur = *head;
-	list_t *nx = NULL;
+	listint_t *pr = NULL;
+	listint_t *cur = *head;
+	listint_t *nx = NULL;
 
 	while (cur)
 	{
@@ -19,9 +19,9 @@ void reverse_list(list_t **head)
 }
 
 
-int is_palindrome(list_t **head)
+int is_palindrome(listint_t **head)
 {
-	list_t *s = *head, *f = *head, *t = *head, *d = NULL;
+	listint_t *s = *head, *f = *head, *t = *head, *d = NULL;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
