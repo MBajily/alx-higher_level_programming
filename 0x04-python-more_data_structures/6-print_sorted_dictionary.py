@@ -4,6 +4,4 @@ def print_sorted_dictionary(a_dictionary):
 
     new_dict = {}
     for key in sorted(keys):
-        new_dict[key] = a_dictionary[key]
-
-    return new_dict
+        print(f'{new_dict[key]} = {a_dictionary[key]}')
