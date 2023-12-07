@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    sorted_values = reversed(a_dictionary.values())
-    for key, value in dictionary.items():
-        if value == max(sorted_values):
-            return key
-    return None
+    best_key = None
+    best_score = float('-inf')
+
+    for key, value in a_dictionary.items():
+        if value > best_score:
+            best_key = key
+            best_score = value
+    return best_key
