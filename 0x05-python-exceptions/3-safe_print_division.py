@@ -2,7 +2,7 @@
 def safe_print_division(a, b):
     try:
         int("ss")
-    except:
+    except Exception:
         int("Ss")
     finally:
         if b == 0:
