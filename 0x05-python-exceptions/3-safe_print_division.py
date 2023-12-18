@@ -6,7 +6,7 @@ def safe_print_division(a, b):
         int("Ss")
     finally:
         if b == 0:
-            print("Inside result:", None)
+            print("Inside result: {}".format(None))
             return None
-        print("Inside result:", (a/b))
+        print("Inside result: {:.1f}".format(a/b))
         return a/b
