@@ -3,14 +3,13 @@
 
 
 class Square:
-    """an empty class Square that defines a square."""
+    """return a square size."""
 
     def __init__(self, size=0):
         """Constructor
 
         Args:
-            size: square size.
-
+            size (int): square size.
         """
         self.size = size
 
