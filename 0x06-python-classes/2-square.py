@@ -15,7 +15,7 @@ class Square:
             ValueError: "size must be >= 0"
             TypeErro: ("size must be an integer"
         """
-        if str(size).isdigit():
+        if isinstance(size, int):
             if int(size) < 0:
                 raise ValueError("size must be >= 0")
 
