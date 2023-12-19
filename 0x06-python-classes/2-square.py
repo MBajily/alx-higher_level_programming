@@ -10,12 +10,15 @@ class Square:
 
         Args:
             size: square size.
+
+        Raises:
+            ValueError: "size must be >= 0"
+            TypeErro: ("size must be an integer"
         """
         if str(size).isdigit():
             if int(size) < 0:
                 raise ValueError("size must be >= 0")
-            else:
-                self.__size = size
 
         else:
             raise TypeError("size must be an integer")
+        self.__size = size
