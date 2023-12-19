@@ -11,23 +11,16 @@ class Square:
         Args:
             size: square size.
 
-        Raises:
-            ValueError: "size must be >= 0"
-            TypeErro: ("size must be an integer"
         """
-        if isinstance(size, int):
-            if int(size) < 0:
-                raise ValueError("size must be >= 0")
+        self.size = size
 
-        else:
-            raise TypeError("size must be an integer")
-        self.__size = size
 
     @property
     def size(self):
         """Get current size of the square."""
         return self.__size
     
+
     @size.setter
     def size(self, value):
         if isinstance(value, int):
