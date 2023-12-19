@@ -5,21 +5,19 @@
 class Square:
     """return a square size."""
 
-    def __init__(self, size=0):
+    def __init__(self, size):
         """Constructor
 
         Args:
             size (int): square size.
         """
-        self.__size = size
-
+        self.size = size
 
     @property
     def size(self):
         """Get current size of the square."""
         return self.__size
     
-
     @size.setter
     def size(self, value):
         if isinstance(value, int):
@@ -29,7 +27,17 @@ class Square:
             raise TypeError("size must be an integer")
         self.__size = value
 
-    
     def area(self):
-        """Return area of the square"""
+        """Return square area"""
         return self.__size * self.__size
+
+    def my_print(self):
+        """prints in stdout the square with the character #"""
+        s = self.__size
+        if s == 0:
+            print("")
+        else:
+            for i in range(s):
+                for j in range(s):
+                    print("#", end="")
+                print()
