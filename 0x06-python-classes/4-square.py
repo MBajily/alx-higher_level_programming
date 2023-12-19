@@ -30,11 +30,13 @@ class Square:
             size: the square's size.
         """
         return self.__size * self.__size
-
+    
+    @property
     def size(self):
         return self.__size
-
-    def size(self, value).setter:
+    
+    @size.setter
+    def size(self, value):
         if isinstance(value, int):
             if int(value) < 0:
                 raise ValueError("size must be >= 0")
