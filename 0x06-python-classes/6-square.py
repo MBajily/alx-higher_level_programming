@@ -5,13 +5,14 @@
 class Square:
     """return a square size."""
 
-    def __init__(self, size):
+    def __init__(self, size=0, position=(0, 0)):
         """Constructor
 
         Args:
             size (int): square size.
         """
-        self.size = size
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -27,6 +28,19 @@ class Square:
             raise TypeError("size must be an integer")
         self.__size = value
 
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        if len(value) != 2:
+            if not isinstance(value, tuple):
+                if not all(isinstance(num, int) for num in value):
+                    if not all(num >= 0 for num in value):
+                        raise TypeError("position must be a tuple of 2 positive integers")
+        self.__posistion = value
+
     def area(self):
         """Return square area"""
         return self.__size * self.__size
@@ -34,10 +48,17 @@ class Square:
     def my_print(self):
         """prints in stdout the square with the character #"""
         s = self.__size
+        p = self.__position
         if s == 0:
             print("")
+            return
+
         else:
+            for i in range(p[1]):
+                print("")
             for i in range(s):
+                for k in range(p[0]):
+                    print(" ", end="")
                 for j in range(s):
                     print("#", end="")
-                print()
+                print("")
