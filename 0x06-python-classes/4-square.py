@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Square module"""
 
 
@@ -13,7 +14,6 @@ class Square:
         """
         self.__size = size
 
-
     @property
     def size(self):
         """Get current size of the square."""
@@ -27,7 +27,6 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         self.__size = value
-
     
     def area(self):
         """Return area of the square"""
