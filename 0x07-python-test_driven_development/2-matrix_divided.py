@@ -3,23 +3,21 @@
 
 
 def matrix_divided(matrix, div):
-    """Divide all elements of a matrix.
+    """Divide elements of matrix.
 
     Args:
-        matrix (list): A list of lists of ints or floats.
+        matrix (list): A list of lists.
         div (int/float): The divisor.
     Raises:
-        TypeError: If the matrix contains non-numbers.
-        TypeError: If the matrix contains rows of different sizes.
-        TypeError: If div is not an int or float.
+        TypeError: If non-numbers.
+        TypeError: If contains rows of different sizes.
+        TypeError: If not an int or float.
         ZeroDivisionError: If div is 0.
     Returns:
-        A new matrix representing the result of the division.
+        The result of the division.
     """
-    if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for row in matrix) or
-            not all((isinstance(ele, int) or isinstance(ele, float))
-                    for ele in [num for row in matrix for num in row])):
+    if not isinstance(matrix, list) or not all(isinstance(row, list)
+            for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of "
                         "integers/floats")
 
@@ -31,5 +29,6 @@ def matrix_divided(matrix, div):
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
-
-    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+    
+    new_matrix = ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+    return new_matrix
