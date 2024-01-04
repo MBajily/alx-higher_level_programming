@@ -32,7 +32,7 @@ class Rectangle:
         """Getting the private height value"""
         return self.__width
 
-    @height.setter
+    @width.setter
     def width(self, value):
         """Set a new value to the private width attr"""
         if not isinstance(value, int):
