@@ -54,6 +54,7 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
+        """Draw the rectangle using #"""
         w = self.__width
         h = self.__height
         string = ""
