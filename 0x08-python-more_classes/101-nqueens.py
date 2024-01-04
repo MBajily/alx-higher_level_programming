@@ -82,7 +82,7 @@ def xout(chessboard, row, column):
         c -= 1
 
 
-def rec_solve(chessboard, row, queens, solutions):
+def rec_solve(chessboard, row, queens, s):
     """solve an N-queens puzzle.
 
     Args:
