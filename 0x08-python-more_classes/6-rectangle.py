@@ -7,13 +7,13 @@ Create a class called Rectangle
 class Rectangle:
     """Represent of the rectangle class"""
 
-    instance_number = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Init rectangle class"""
         self.width = width
         self.height = height
-        Rectangle.instance_number += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -75,4 +75,4 @@ class Rectangle:
     def __del__(self):
         """Return a message when the object is deleted."""
         print("Bye rectangle...")
-        Rectangle.instance_number -= 1
+        Rectangle.number_of_instances -= 1
