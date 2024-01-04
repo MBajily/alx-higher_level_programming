@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 """Solves the N-queens puzzle.
+
+Example:
+    $ ./101-nqueens.py N
+
+Attributes:
+    chessboard (list): lists representing the chessboard.
+    solutions (list): lists containing solutions.
 """
 import sys
 
