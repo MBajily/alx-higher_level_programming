@@ -1,43 +1,48 @@
-#!/usr/bin/python3
-
 import sys
 
-class NQueensSolver:
-    def __init__(self, N):
-        self.N = N
-        self.board = [-1] * N
+def nqueens(N):
+    if not isinstance(N, int):
+        print("N must be a number")
+        sys.exit(1)
 
-    def solve(self):
-        self._solve_nqueens(0)
+    if N < 4:
+        print("N must be at least 4")
+        sys.exit(1)
 
-    def _solve_nqueens(self, row):
-        if row == self.N:
-            self._print_solution()
-            return
-        for col in range(self.N):
-            if self._is_safe(row, col):
-                self.board[row] = col
-                self._solve_nqueens(row + 1)
-                self.board[row] = -1
+    board = [-1] * N
+    solve_nqueens(N, 0, board)
 
-    def _is_safe(self, row, col):
-        for i in range(row):
-            if (self.board[i] == col or
-                    self.board[i] - i == col - row or
-                    self.board[i] + i == col + row):
-                return False
-            return True
+def solve_nqueens(N, row, board):
+    if row == N:
+        print_solution(board)
+        return
 
-    def _print_solution(self):
-        for row in range(self.N):
-            line = ""
-            for col in range(self.N):
-                if self.board[row] == col:
-                    line += "Q "
-                else:
-                    line += ". "
-            print(line)
-        print()
+    for col in range(N):
+        if is_safe(board, row, col):
+            board[row] = col
+            solve_nqueens(N, row+1, board)
+            board[row] = -1
+
+def is_safe(board, row, col):
+    for i in range(row):
+        if (board[i] == col or
+        board[i] - i == col - row or
+        board[i] + i == col + row):
+            return False
+        return True
+
+def print_solution(board):
+    N = len(board)
+    for row in range(N):
+        line = ""
+        for col in range(N):
+            if board[row] == col:
+                line += "Q "
+            else:
+                line += ". "
+        print(line)
+    print()
+
 
 
 if __name__ == "__main__":
@@ -45,15 +50,10 @@ if __name__ == "__main__":
         print("Usage: nqueens N")
         sys.exit(1)
 
-    try:
-        N = int(sys.argv[1])
-        if N < 4:
-            print("N must be at least 4")
-            sys.exit(1)
-        
-        solver = NQueensSolver(N)
-        solver.solve()
+        try:
+            N = int(sys.argv[1])
+            nqueens(N)
 
-    except ValueError:
-        print("N must be a number")
-        sys.exit(1)
+        except ValueError:
+            print("N must be a number")
+            sys.exit(1)
