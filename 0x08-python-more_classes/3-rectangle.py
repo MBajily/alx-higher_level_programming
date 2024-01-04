@@ -55,14 +55,10 @@ class Rectangle:
 
     def __str__(self):
         """Draw the rectangle using #"""
-        w = self.__width
-        h = self.__height
         string = ""
-        if h == 0 or w == 0:
-            return string
-
-        for i in range(w):
-            for j in range(h):
-                string += "#"
-            string += '\n'
+        if self.__height != 0 and self.__width != 0:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    string += "#"
+                string += '\n'
         return string
