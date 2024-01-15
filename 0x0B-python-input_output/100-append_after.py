@@ -12,9 +12,9 @@ def append_after(filename="", search_string="", new_string=""):
     """
     string = ""
     with open(filename) as r:
-        for l in r:
-            string += l
-            if search_string in l:
+        for ln in r:
+            string += ln
+            if search_string in ln:
                 string += new_string
 
     with open(filename, "w") as w:
