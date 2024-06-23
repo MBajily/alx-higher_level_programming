@@ -10,12 +10,12 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    
+                        .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
     Base.metadata.create_all(eng)
     sess = sessionmaker(bind=eng)
     sess = sess()
-    
+
     for instance in (sess.query(State.name, City.id, City.name)
                      .filter(State.id == City.state_id)):
         print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])

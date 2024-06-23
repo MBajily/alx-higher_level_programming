@@ -9,11 +9,11 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+                        .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(eng)
     sess = sessionmaker(bind=eng)
     sess = sess()
-    
+
     instance = sess.query(State).first()
     if instance is None:
         print("Nothing")
