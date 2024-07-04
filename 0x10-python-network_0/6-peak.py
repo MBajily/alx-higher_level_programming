@@ -13,7 +13,6 @@ def find_peak(list_of_integers):
     # Check if the list has only one element
     #if n == 1:
     #    return list_of_integers[0]
-    
     # Binary search to find the peak
     low = 0
     high = n
