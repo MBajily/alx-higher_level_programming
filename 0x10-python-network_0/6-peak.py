@@ -3,7 +3,7 @@
 
 
 def find_peak(list_of_integers):
-    # Get the length of the list
+    """ find the peak number with the shortest algorithm"""
     n = len(list_of_integers)
 
     # Check if the list is empty
