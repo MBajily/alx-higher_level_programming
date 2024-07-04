@@ -1,13 +1,3 @@
 #!/bin/bash
-# Check if the URL argument is provided
-if [ -z "$1" ]; then
-  echo "URL argument is missing."
-  exit 1
-fi
-
-# Set the POST parameters
-email="test@gmail.com"
-subject="I will always be here for PLD"
-
-# Send a POST request to the URL with the parameters
-curl -s -X POST -d "email=$email&subject=$subject" "$1"
+# Check if the URL argument is provide
+curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" "${1}"
