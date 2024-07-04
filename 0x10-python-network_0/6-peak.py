@@ -17,20 +17,20 @@ def find_peak(list_of_integers):
     # Binary search to find the peak
     low = 0
     high = n - 1
+    mid = ((low + high) // 2) + low
 
-    while low <= high:
-        mid = (low + high) // 2
-        current = list_of_integers[mid]
+    if high == 0:
+        return list_of_integers[0]
 
-        # Check if the current element is a peak
-        if (mid == 0 or current >= list_of_integers[mid - 1])\
-                and (mid == n - 1\
-                or current >= list_of_integers[mid + 1]):
-                    return current
+    if high == 1:
+        return max(list_of_integers)
 
-        # If the current element is not a peak, move to the left or right
-        if mid > 0 and list_of_integers[mid - 1] > current:
-            high = mid - 1
-        else:
-            low = mid + 1
-    return None
+    if list_of_integers[mid] >= list_of_integers[mid - 1]\
+            and list_of_integers[mid] >= list_of_integers[mid + 1]:
+                return list_of_integers[mid]
+
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
+        return find_peak(list_of_integers[mid + 1:])
+
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+        return find_peak(list_of_integers[:mid])
