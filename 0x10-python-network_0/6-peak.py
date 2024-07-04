@@ -17,7 +17,7 @@ def find_peak(list_of_integers):
     # Binary search to find the peak
     low = 0
     high = n
-    mid = int(((low + high) // 2) + low)
+    mid = int(((high - low) // 2) + low)
 
     if high == 1:
         return list_of_integers[0]
