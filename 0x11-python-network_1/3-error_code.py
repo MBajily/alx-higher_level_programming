@@ -4,7 +4,7 @@ the body of the response (decoded in utf-8).
 """
 import sys
 from urllib.request import  urlopen
-from urllib.error import  HTTPError
+import urllib.error
 
 
 if __name__ == "__main__":
@@ -12,5 +12,5 @@ if __name__ == "__main__":
         with urlopen(sys.argv[1]) as response:
             print(response.read().decode('UTF-8'))
 
-    except HTTPError as error:
+    except urllib.error.HTTPError as error:
         print('Error code:', error.code)
