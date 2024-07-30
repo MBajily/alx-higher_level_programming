@@ -1,14 +1,7 @@
 #!/usr/bin/node
-
 const request = require('request');
-
-// Get the Movie ID from command line arguments
 const movieId = process.argv[2];
-
-// Construct the URL for the Star Wars API
 const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
-
-// Function to make a request and return a promise
 function makeRequest(url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
@@ -17,8 +10,6 @@ function makeRequest(url) {
     });
   });
 }
-
-// Main function to fetch and print character names
 async function fetchAndPrintCharacters() {
   try {
     const movieBody = await makeRequest(url);
@@ -34,6 +25,4 @@ async function fetchAndPrintCharacters() {
     console.error('Error:', error);
   }
 }
-
-// Call the main function
 fetchAndPrintCharacters();
